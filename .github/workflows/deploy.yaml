@@ -37,6 +37,7 @@ jobs:
 
     - name: Build and push Docker image
       run: |
+        DOCKER_TAG="${{ github.sha }}"
         docker build -t ${{ secrets.DOCKER_USERNAME }}/rapid-app:$GITHUB_SHA .
         docker push ${{ secrets.DOCKER_USERNAME }}/rapid-app:$GITHUB_SHA
       env:
