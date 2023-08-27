@@ -36,9 +36,12 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push Docker image
+      # run: |
+      #   docker build -t ${{ secrets.DOCKER_USERNAME }}/rapid-app:$GITHUB_SHA .
+      #   docker push ${{ secrets.DOCKER_USERNAME }}/rapid-app:$GITHUB_SHA
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/rapid-app:$GITHUB_SHA .
-        docker push ${{ secrets.DOCKER_USERNAME }}/rapid-app:$GITHUB_SHA
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/rapid-app:latest .
+        docker push ${{ secrets.DOCKER_USERNAME }}/rapid-app:latest
       env:
         GITHUB_SHA: ${{ github.sha }}
 
