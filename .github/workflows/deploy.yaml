@@ -19,13 +19,13 @@ jobs:
         version: '444.0.0'  # Use the latest version
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         export_default_credentials: true
-
+        
     - name: Install gke-gcloud-auth-plugin
       run: |
         gcloud components install gke-gcloud-auth-plugin
-      env:
-        # CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
-        # GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}        
+      # env:
+      #   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
+      #   GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}        
 
     - name: Configure Docker
       run: |
