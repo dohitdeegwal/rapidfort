@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rapid-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: rapid-app
+  template:
+    metadata:
+      labels:
+        app: rapid-app
+    spec:
+      containers:
+      - name: rapid-app-container
+        image: dohitdeegwal/rapid-app
+        ports:
+        - containerPort: 5000
