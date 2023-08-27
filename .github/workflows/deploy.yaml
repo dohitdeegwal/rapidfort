@@ -19,6 +19,7 @@ jobs:
         version: '444.0.0'  # Use the latest version
         project_id: ${{ secrets.GCP_PROJECT_ID }}
         export_default_credentials: true
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
         
     - name: Install gke-gcloud-auth-plugin
       run: |
