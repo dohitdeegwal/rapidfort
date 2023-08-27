@@ -2,11 +2,10 @@
 FROM python:3.8
 
 # Set environment variables
-ENV FLASK_APP=your_app.py
-ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_APP=app.py
 
 # Set the working directory
-WORKDIR /app
+WORKDIR /rapidfort
 
 # Copy your application code into the container
 COPY . .
