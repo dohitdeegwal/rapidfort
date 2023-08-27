@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: rapid-app-container
-        image: dohitdeegwal/rapid-app:${DOCKER_TAG}
+        image: dohitdeegwal/rapid-app:__TAG__
         ports:
         - containerPort: 5000
