@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: rapid-app-container
-        image: dohitdeegwal/rapid-app
+        image: dohitdeegwal/rapid-app:${{ github.sha }}
         ports:
         - containerPort: 5000
