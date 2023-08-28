@@ -23,10 +23,7 @@ jobs:
 
     - name: Install gke-gcloud-auth-plugin
       run: |
-        gcloud components install gke-gcloud-auth-plugin
-      # env:
-      #   CLOUDSDK_METRICS_ENVIRONMENT: github-actions-setup-gcloud
-      #   GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}        
+        gcloud components install gke-gcloud-auth-plugin     
 
     - name: Configure Docker
       run: |
