@@ -4,11 +4,13 @@
 This project demonstrates the creation of a REST API-based web server that allows users to upload any file and retrieve metadata about the uploaded file. The project is containerized using Docker, and Kubernetes manifests are included to facilitate hosting the web server.
 
 Table of Contents
-- Overview[Overview](#overview)
-- API Definition[API Definition](#api-definition)
-- User Interface[User Interface](#user-interface)
-- Dockerization[Dockerization](#dockerization)
-- Kubernetes Hosting[Kubernetes Hosting](#kubernetes-hosting)
+- [Overview](#overview)
+- [API Definition](#api-definition)
+- [User Interface](#user-interface)
+- [Dockerization](#dockerization)
+- [Kubernetes Hosting](#kubernetes-hosting)\
+- [Getting Started](#getting-started)
+- [Conclusion](#conclusion)
   
 - ## Overview
 The main goal of this project is to build a web server that accepts file uploads and provides metadata information about the uploaded files. The project includes the following components:
