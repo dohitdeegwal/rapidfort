@@ -3,6 +3,11 @@ from flask import Flask, request, jsonify, render_template, send_from_directory
 from werkzeug.utils import secure_filename
 import mimetypes
 
+#  log the request and response
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+
 app = Flask(__name__)
 
 # Define the directory where uploaded files will be temporarily stored
