@@ -19,7 +19,7 @@ def extract_metadata(file_path):
         mime_details = mimetypes.guess_type(file_path)
         metadata = {
             "File Name": os.path.basename(file_path),
-            "File Type": mime_details,
+            "File Type": mime_details[0],
             "File Size": os.path.getsize(file_path),
         }
 
