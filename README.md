@@ -10,6 +10,8 @@ Table of Contents
 - [Dockerization](#dockerization)
 - [Kubernetes Hosting](#kubernetes-hosting)
 - [Getting Started](#getting-started)
+    - [For Docker containerization](#for-docker-containerization)
+    - [For Kubernetes deployment](#for-kubernetes-deployment)
 - [Conclusion](#conclusion)
   
 - ## Overview
@@ -20,7 +22,6 @@ The main goal of this project is to build a web server that accepts file uploads
 1. Docker containerization for easy deployment.
 1. Kubernetes manifests to host the web server in a Kubernetes cluster.
 
-- ## Installation
 
 - ## API Definition
 The REST API exposes the following endpoints:
@@ -34,7 +35,6 @@ The project includes a simple user interface that can be accessed via a web brow
 
 - Upload a file to the server.
 - View metadata about the uploaded files.
-- Click on a link to view the uploaded file itself.
 
 - ## Dockerization
 To facilitate deployment and distribution, the project is containerized using Docker. A Dockerfile is provided, which contains the necessary instructions to build a Docker image of the web server. This Docker image can then be easily run on any Docker-compatible environment.
