@@ -48,7 +48,7 @@ def add_image_metadata(file_path, metadata):
 
 
 def add_pdf_metadata(file_path, metadata):
-    from PyPDF2 import PdfReader  # Import PdfReader
+    from PyPDF2 import PdfReader
 
     with open(file_path, "rb") as pdf_file:
         pdf_reader = PdfReader(pdf_file)
@@ -60,7 +60,6 @@ def add_text_metadata(file_path, metadata):
         metadata["Text Content"] = text_file.read()
 
 
-# Add functions for audio, video, Excel, and Word document metadata here
 def add_audio_metadata(file_path, metadata):
     from mutagen.mp3 import MP3
 
