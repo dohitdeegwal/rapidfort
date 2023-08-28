@@ -3,7 +3,6 @@
 # REST API and Web Server
 This project demonstrates the creation of a REST API-based web server that allows users to upload any file and retrieve metadata about the uploaded file. The project is containerized using Docker, and Kubernetes manifests are included to facilitate hosting the web server.
 
-## LIVE : http://rapidfort.dohit.club/
 Table of Contents
 - Overview
 - API Definition
