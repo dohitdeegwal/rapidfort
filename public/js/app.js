@@ -1,6 +1,7 @@
 const fileInput = document.getElementById('fileInput');
 const metadataDisplay = document.getElementById('metadataDisplay');
 const uploadMessage = document.getElementById('uploadMessage');
+const uploadProgress = document.getElementById('uploadProgress');
 
 // Function to format a timestamp
 function formatTimestamp(timestamp) {
@@ -41,25 +42,39 @@ fileInput.addEventListener('change', (event) => {
     const formData = new FormData();
     formData.append('file', file);
 
-    // Show the uploading message
+    // Show the uploading message and progress bar
     uploadMessage.style.display = 'block';
+    uploadProgress.style.display = 'block';
 
     // Clear any previous metadata
     metadataDisplay.innerHTML = '';
 
-    fetch('/upload', {
-        method: 'POST',
-        body: formData,
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            displayMetadata(data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            // Hide the uploading message when the response is received
+    const xhr = new XMLHttpRequest();
+
+    xhr.upload.addEventListener('progress', (e) => {
+        if (e.lengthComputable) {
+            const percentComplete = (e.loaded / e.total) * 100;
+            uploadProgress.value = percentComplete;
+        }
+    });
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                const data = JSON.parse(xhr.responseText);
+                displayMetadata(data);
+            } else {
+                console.error('Error:', xhr.statusText);
+            }
+
+            // Hide the uploading message and progress bar when the response is received
             uploadMessage.style.display = 'none';
-        });
+            uploadProgress.style.display = 'none';
+            // Reset the progress bar value
+            uploadProgress.value = 0;
+        }
+    };
+
+    xhr.open('POST', '/upload', true);
+    xhr.send(formData);
 });
