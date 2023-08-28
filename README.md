@@ -8,7 +8,7 @@ Table of Contents
 - [API Definition](#api-definition)
 - [User Interface](#user-interface)
 - [Dockerization](#dockerization)
-- [Kubernetes Hosting](#kubernetes-hosting)\
+- [Kubernetes Hosting](#kubernetes-hosting)
 - [Getting Started](#getting-started)
 - [Conclusion](#conclusion)
   
@@ -42,6 +42,9 @@ To facilitate deployment and distribution, the project is containerized using Do
 - ## Kubernetes Hosting
 The Kubernetes manifests included in the project enable the deployment of the web server to a Kubernetes cluster. By applying these manifests, the web server can be hosted, scaled, and managed within a Kubernetes environment.
 
+- ## Github Actions
+The project includes a Github Actions workflow that automatically builds and pushes a Docker image of the web server to Docker Hub whenever a new commit is pushed to the main branch. This workflow can be found in the .github/workflows directory. The image is tagged with the commit hash of the commit that triggered the workflow. It is then deployed to a Kubernetes cluster using the Kubernetes manifests included in the project.
+
 ## Getting Started
 To set up and run the project, follow these steps:
 
@@ -54,6 +57,9 @@ To set up and run the project, follow these steps:
 ### For Docker containerization:
 - Build the Docker image: ``` docker build -t image-name:tag . ```
 - Run the Docker container: ``` docker run -p 5000:5000 image-name:tag ```
+
+### For Kubernetes deployment:
+- Apply the Kubernetes manifests: ``` kubectl apply -f kubernetes/ ```
 
 - # Conclusion
 This project showcases the creation of a REST API-based web server that enables users to upload files and retrieve metadata information. 
