@@ -18,6 +18,8 @@ The main goal of this project is to build a web server that accepts file uploads
 1. Docker containerization for easy deployment.
 1. Kubernetes manifests to host the web server in a Kubernetes cluster.
 
+- ## Installation
+
 - ## API Definition
 The REST API exposes the following endpoints:
 
@@ -44,8 +46,8 @@ To set up and run the project, follow these steps:
 
 - Clone the repository: git clone https://github.com/dohitdeegwal/rapidfort.git
 - Navigate to the project directory: ``` cd rapidfort ```
-- Initialize the packages by running ``` npm install ```
-- Run the web server locally: ``` node index.js ```
+- Initialize the packages by running ``` pip install -r requirements.txt ```
+- Run the web server locally: ``` flask run ```
 - Access the user interface in your web browser: http://localhost:5000
   
 ### For Docker containerization:
