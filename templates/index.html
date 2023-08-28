@@ -14,12 +14,20 @@
             <h1>File Metadata Viewer</h1>
         </header>
         <main>
+            <!-- <div class="upload-container">
+                <label for="fileInput" class="upload-label">
+                    Select a File
+                    <input type="file" id="fileInput" accept="image/*,audio/*,video/*,.pdf,.doc,.docx,.xls,.xlsx">
+                </label>
+            </div> -->
             <div class="upload-container">
                 <label for="fileInput" class="upload-label">
                     Select a File
                     <input type="file" id="fileInput" accept="image/*,audio/*,video/*,.pdf,.doc,.docx,.xls,.xlsx">
                 </label>
+                <p id="uploadMessage" style="display: none;">Uploading...</p>
             </div>
+
             <div class="metadata-container">
                 <h2>File Metadata:</h2>
                 <div id="metadataDisplay"></div>

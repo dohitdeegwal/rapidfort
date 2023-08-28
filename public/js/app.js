@@ -1,5 +1,6 @@
 const fileInput = document.getElementById('fileInput');
 const metadataDisplay = document.getElementById('metadataDisplay');
+const uploadMessage = document.getElementById('uploadMessage');
 
 // Function to format a timestamp
 function formatTimestamp(timestamp) {
@@ -40,6 +41,12 @@ fileInput.addEventListener('change', (event) => {
     const formData = new FormData();
     formData.append('file', file);
 
+    // Show the uploading message
+    uploadMessage.style.display = 'block';
+
+    // Clear any previous metadata
+    metadataDisplay.innerHTML = '';
+
     fetch('/upload', {
         method: 'POST',
         body: formData,
@@ -50,5 +57,9 @@ fileInput.addEventListener('change', (event) => {
         })
         .catch((error) => {
             console.error('Error:', error);
+        })
+        .finally(() => {
+            // Hide the uploading message when the response is received
+            uploadMessage.style.display = 'none';
         });
 });
